@@ -1,8 +1,8 @@
 {
   "name": "stik-labs.js",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "A set of tools to easily test Stik modules",
-  "main": "stik.js",
+  "main": "stik-labs.js",
   "scripts": {
     "test": "grunt test"
   },
@@ -30,14 +30,13 @@
     "grunt-cli": "~0.1.11",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-jasmine": "~0.5.2",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-template-jasmine-istanbul": "~0.2.5"
+    "grunt-contrib-concat": "~0.3.0"
   },
   "banner": {
     "divider": "// ==========================================================================\n",
     "project": "// Project:   Stik Labs - Stik testing environments\n",
     "copyright": "// Copyright: Copyright 2013-2014 Lukas Alexandre\n",
     "license": "// License:   Licensed under MIT license\n",
-    "licenseLink": "//            See https://github.com/stikjs/stik.js/blob/master/LICENSE\n"
+    "licenseLink": "//            See https://github.com/stikjs/stik-labs/blob/master/LICENSE\n"
   }
 }

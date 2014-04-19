@@ -2,10 +2,10 @@
 // Project:   Stik Labs - Stik testing environments
 // Copyright: Copyright 2013-2014 Lukas Alexandre
 // License:   Licensed under MIT license
-//            See https://github.com/stikjs/stik.js/blob/master/LICENSE
+//            See https://github.com/stikjs/stik-labs/blob/master/LICENSE
 // ==========================================================================
 
-// Version: 1.0.0-alpha | From: 19-04-2014
+// Version: 1.0.0 | From: 19-04-2014
 
 window.stik.labs.behavior = function behaviorLab( spec ){
   if ( !spec ) { throw "Stik: Behavior Lab needs an environment to run"; }
