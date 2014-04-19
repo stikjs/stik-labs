@@ -3,7 +3,8 @@ module.exports = function(grunt){
     'src/behavior_lab.js',
     'src/boundary_lab.js',
     'src/controller_lab.js',
-    'src/helper_lab.js'
+    'src/helper_lab.js',
+    'src/dom_lab.js'
   ];
 
   grunt.initConfig({
