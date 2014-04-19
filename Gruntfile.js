@@ -1,6 +1,5 @@
 module.exports = function(grunt){
   var srcFiles = [
-    'node_modules/stik.js/stik.js',
     'src/behavior_lab.js',
     'src/boundary_lab.js',
     'src/controller_lab.js',
@@ -20,7 +19,7 @@ module.exports = function(grunt){
               '// Version: <%= pkg.version %> | From: <%= grunt.template.today("dd-mm-yyyy") %>\n\n'
     },
     jasmine: {
-      src: srcFiles,
+      src: ['node_modules/stik.js/stik.js'].concat(srcFiles),
       options: {
         specs: 'specs/*_spec.js'
       }
