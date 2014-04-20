@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/stikjs/stik-labs",
   "dependencies": {
-    "stik.js": "1.0.0-alpha"
+    "stik.js": "1.0.0-rc3"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

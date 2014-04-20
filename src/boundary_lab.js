@@ -6,19 +6,19 @@ window.stik.labs.boundary = function boundaryLab( spec ){
       boundary = window.stik.$$manager.getBoundary( spec.name );
 
   env.run = function run( doubles ){
-    return boundary.to.resolve( asInjectables( doubles ) );
+    return boundary.to.resolve( mergeModules( doubles ) );
   };
 
-  function asInjectables( doubles ){
-    var injectableDoubles = {};
+  function mergeModules( doubles ){
+    var modules = window.stik.$$manager.boundariesFor( "behavior" );
 
     for ( var dbl in doubles ) {
-      injectableDoubles[ dbl ] = window.stik.injectable({
+      modules[ dbl ] = window.stik.injectable({
         module: doubles[ dbl ]
       });
     }
 
-    return injectableDoubles;
+    return modules;
   }
 
   return env;

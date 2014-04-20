@@ -42,6 +42,34 @@ describe("BoundaryLab", function(){
     expect( result ).toEqual( template );
   });
 
+  it("with a resolvable boundary injecting another custom boundary", function(){
+    var template, lab, result;
+
+    var injectMock = jasmine.createSpy("inject");
+
+    stik.boundary({
+      as: "myInjectableBoundary",
+      from: "behavior",
+      to: injectMock
+    });
+
+    stik.boundary({
+      as: "myBoundary",
+      resolvable: true,
+      to: function( myInjectableBoundary ){
+        myInjectableBoundary()
+      }
+    });
+
+    template = "<span data-id=\"$910293u412018d23\"></span>";
+
+    stik.labs.boundary({
+      name: "myBoundary"
+    }).run();
+
+    expect( injectMock ).toHaveBeenCalled();
+  });
+
   it("with a function boundary", function(){
     var boundaryMock = jasmine.createSpy("boundaryMock");
 
