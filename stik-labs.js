@@ -5,7 +5,7 @@
 //            See https://github.com/stikjs/stik-labs/blob/master/LICENSE
 // ==========================================================================
 
-// Version: 1.1.3 | From: 20-04-2014
+// Version: 0.1.0 | From: 20-04-2014
 
 window.stik.labs = {};
 
