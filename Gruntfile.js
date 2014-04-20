@@ -1,5 +1,6 @@
 module.exports = function(grunt){
   var srcFiles = [
+    'src/setup.js',
     'src/behavior_lab.js',
     'src/boundary_lab.js',
     'src/controller_lab.js',

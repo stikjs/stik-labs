@@ -5,7 +5,9 @@
 //            See https://github.com/stikjs/stik-labs/blob/master/LICENSE
 // ==========================================================================
 
-// Version: 1.1.0 | From: 19-04-2014
+// Version: 1.1.2 | From: 20-04-2014
+
+window.stik.labs = {};
 
 window.stik.labs.behavior = function behaviorLab( spec ){
   if ( !spec ) { throw "Stik: Behavior Lab needs an environment to run"; }
