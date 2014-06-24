@@ -1,14 +1,16 @@
-describe("BoundaryLab", function(){
-  describe("when not ok", function(){
-    it("missing environment inputs", function(){
-      expect(function(){
-        stik.labs.boundary();
-      }).toThrow("Stik: Boundary Lab needs an environment to run");
+require("./spec_helper");
 
-      expect(function(){
-        stik.labs.boundary( {} );
-      }).toThrow("Stik: Boundary Lab needs a name");
-    });
+var stik = window.stik;
+
+describe("BoundaryLab", function(){
+  it("should not be ok while missing inputs", function(){
+    expect(function(){
+      stik.labs.boundary();
+    }).toThrow("Stik: Boundary Lab needs an environment to run");
+
+    expect(function(){
+      stik.labs.boundary( {} );
+    }).toThrow("Stik: Boundary Lab needs a name");
   });
 
   beforeEach(function(){

@@ -1,1 +1,1 @@
-window.stik.labs = {};
+(function( stik ){ stik.labs = {}; })( window.stik );

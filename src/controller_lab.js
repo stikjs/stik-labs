@@ -1,38 +1,40 @@
-window.stik.labs.controller = function controllerLab( spec ){
-  if ( !spec ) { throw "Stik: Controller Lab needs an environment to run"; }
-  if ( !spec.name ) { throw "Stik: Controller Lab needs a name"; }
-  if ( !spec.action ) { throw "Stik: Controller Lab needs the action name"; }
-  if ( !spec.template ) { throw "Stik: Controller Lab needs a template"; }
+(function( document, stik ){
+  stik.labs.controller = function controllerLab( spec ){
+    if ( !spec ) { throw "Stik: Controller Lab needs an environment to run"; }
+    if ( !spec.name ) { throw "Stik: Controller Lab needs a name"; }
+    if ( !spec.action ) { throw "Stik: Controller Lab needs the action name"; }
+    if ( !spec.template ) { throw "Stik: Controller Lab needs a template"; }
 
-  var env = {},
-      result;
+    var env = {},
+        result;
 
-  env.template = parseAsDOM();
+    env.template = parseAsDOM();
 
-  result = window.stik.$$manager.bindActionWithTemplate(
-    spec.name, spec.action, env.template
-  );
-
-  env.run = function run( doubles ){
-    result.context.load(
-      result.executionUnit, mergeModules( doubles )
+    result = stik.$$manager.bindActionWithTemplate(
+      spec.name, spec.action, env.template
     );
-  };
 
-  function parseAsDOM(){
-    var container = document.implementation.createHTMLDocument();
-    container.body.innerHTML = spec.template;
-    return container.body.firstChild;
-  }
+    env.run = function run( doubles ){
+      result.context.load(
+        result.executionUnit, mergeModules( doubles )
+      );
+    };
 
-  function mergeModules( doubles ){
-    for ( var dbl in doubles ) {
-      result.modules[ dbl ] = window.stik.injectable({
-        module: doubles[ dbl ]
-      });
+    function parseAsDOM(){
+      var container = document.implementation.createHTMLDocument();
+      container.body.innerHTML = spec.template;
+      return container.body.firstChild;
     }
-    return result.modules;
-  }
 
-  return env;
-};
+    function mergeModules( doubles ){
+      for ( var dbl in doubles ) {
+        result.modules[ dbl ] = stik.injectable({
+          module: doubles[ dbl ]
+        });
+      }
+      return result.modules;
+    }
+
+    return env;
+  };
+})( window.document, window.stik );

@@ -1,3 +1,5 @@
+var stik = window.stik;
+
 describe("ControllerLab", function(){
   describe("when not ok", function(){
     it("missing environment inputs", function(){
@@ -25,34 +27,19 @@ describe("ControllerLab", function(){
   });
 
   it("should run the specified controller action", function(){
-    var template, lab;
+    var template, lab,
+        contextMock = jasmine.createSpy("contextMock");
 
-    stik.controller("StarWarsCtrl", "Dialog", function($viewBag){
-      $viewBag.push({
-        luke: "You killed my father",
-        vader: "Luke, I'm your father"
-      });
-    });
-
-    template = "<div data-controller=\"StarWarsCtrl\" data-action=\"Dialog\">" +
-      "<span class=\"luke\" data-key=\"luke\"></span>" +
-      "<span class=\"vader\" data-key=\"vader\"></span>" +
-    "</div>";
+    stik.controller("StarWarsCtrl", "Dialog", contextMock);
 
     lab = stik.labs.controller({
       name: "StarWarsCtrl",
       action: "Dialog",
-      template: template
+      template: "<div></div>"
     });
     lab.run();
 
-    expect(
-      lab.template.getElementsByClassName("luke")[0].textContent
-    ).toEqual("You killed my father");
-
-    expect(
-      lab.template.getElementsByClassName("vader")[0].textContent
-    ).toEqual("Luke, I'm your father");
+    expect(contextMock).toHaveBeenCalled();
   });
 
   it("mocking dependencies", function(){

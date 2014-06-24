@@ -11,17 +11,12 @@ module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     meta: {
-      banner: '<%= pkg.banner.divider %>' +
-              '<%= pkg.banner.project %>' +
-              '<%= pkg.banner.copyright %>' +
-              '<%= pkg.banner.license %>' +
-              '<%= pkg.banner.licenseLink %>' +
-              '<%= pkg.banner.divider %>' +
-              '\n' +
-              '// Version: <%= pkg.version %> | From: <%= grunt.template.today("dd-mm-yyyy") %>\n\n'
+      banner: '// Version: <%= pkg.version %> | From: <%= grunt.template.today("dd-mm-yyyy") %>\n\n'
     },
     jasmine: {
-      src: ['node_modules/stik.js/stik.js'].concat(srcFiles),
+      src: [
+        'node_modules/stik-core.js/stik-core.js'
+      ].concat(srcFiles),
       options: {
         specs: 'specs/*_spec.js'
       }

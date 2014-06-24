@@ -1,3 +1,7 @@
+require("./spec_helper");
+
+var stik = window.stik;
+
 describe("BehaviorLab", function(){
   describe("when not ok", function(){
     it("missing environment inputs", function(){
