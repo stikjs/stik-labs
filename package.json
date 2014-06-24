@@ -2,7 +2,7 @@
   "name": "stik-labs.js",
   "version": "0.2.0",
   "description": "A set of tools to easily test Stik modules",
-  "main": "stik-labs.js",
+  "main": "dist/stik-labs.js",
   "scripts": {
     "test": "grunt test"
   },
