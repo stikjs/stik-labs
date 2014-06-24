@@ -18,7 +18,7 @@ var fileStack = [
 ];
 
 var banner = [
-  "// Version: <%= pkg.version %> | From: <%= date %>\n",
+  "// Stik-labs - Version: <%= pkg.version %> | From: <%= date %>\n",
 ""].join("\n");
 
 gulp.task("test", function(){

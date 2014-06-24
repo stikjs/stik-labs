@@ -4,7 +4,7 @@
   "description": "A set of tools to easily test Stik modules",
   "main": "dist/stik-labs.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
