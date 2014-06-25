@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/stikjs/stik-labs",
   "dependencies": {
-    "stik-core.js": "1.x"
+    "stik-core": "^1.0.3"
   },
   "devDependencies": {
     "gulp-header": "^1.0.2",

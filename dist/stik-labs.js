@@ -1,4 +1,4 @@
-// Stik-labs - Version: 0.2.0 | From: 24-6-2014
+// Stik-labs - Version: 0.2.0 | From: 25-6-2014
 
 (function( stik ){ stik.labs = {}; })( window.stik );
 
